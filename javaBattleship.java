@@ -65,9 +65,9 @@ public class javaBattleship
 	
 	/**
 	 * 
-	 * @param grid a 2D string array
-	 * 
 	 * This method will make every index of the grid that is passed through it the █ character.
+	 * 
+	 * @param grid a 2D string array
 	 */
 	public static void fillGrid(String[][] grid) {
 		for (int i = 0; i < grid.length; i++) {
@@ -79,9 +79,9 @@ public class javaBattleship
 	
 	/**
 	 * 
-	 * @param grid a 2D string array
-	 * 
 	 * This method will print out the items in the array that is passed through it.
+	 * 
+	 * @param grid a 2D string array
 	 */
 	public static void printGrid(String[][] grid) {
 		for (String[] row: grid) {
@@ -114,10 +114,10 @@ public class javaBattleship
 	
 	/**
 	 * 
-	 * @param grid a 2D string array
-	 * 
 	 * Prompts the user for input, which are the coordinate points where the user wants to
 	 * place their ships on their grid.
+	 * 
+	 * @param grid a 2D string array
 	 */
 	public static void placeShips(String[][] grid) {
 		Scanner position = new Scanner(System.in);
@@ -131,13 +131,13 @@ public class javaBattleship
 	
 	/**
 	 * 
-	 * @param grid1 a 2D string array
-	 * @param grid2 a 2D string array
-	 * @return the integer 1 if an opponent's ship is hit and 0 if not.
-	 * 
 	 * Prompts the user to input a coordinate point to attack on the opponent's grid.
 	 * Checks the opponents grid to see if there is a ship on that space and returns
 	 * 1 if a ship is hit and 0 if a ship is not hit.
+	 * 
+	 * @param grid1 a 2D string array
+	 * @param grid2 a 2D string array
+	 * @return the integer 1 if an opponent's ship is hit and 0 if not.
 	 */
 	public static int hitOpponent(String[][] grid1, String[][] grid2) {
 		Scanner position = new Scanner(System.in);
@@ -159,11 +159,11 @@ public class javaBattleship
 	
 	/**
 	 * 
-	 * @param grid a 2D string array
-	 * 
 	 * Randomly generates coordinates as well as a direction to place the opponent's ships.
 	 * Picks a random coordinate and direction (horizontal or vertical) and checks to make
 	 * sure that the parameters are valid. Then, places a ship twice.
+	 * 
+	 * @param grid a 2D string array
 	 */
 	public static void placeOpponentShips(String[][] grid) {
 		int ships_placed = 0;
@@ -193,14 +193,14 @@ public class javaBattleship
 	
 	/**
 	 * 
-	 * @param grid a 2D string array
-	 * @return the integer 1 if a user's ship is hit and 0 if not.
-	 * 
 	 * Simulates the opponent deciding a coordinate point to attack. Generates a random x and y
 	 * coordinate and if the coordinate point has already been attacked, generates a new set of
 	 * coordinates until a coordinate point has not been hit yet. Then, proceeds to hit that point
 	 * and if a ship is hit, the user's board is changed to the character H. Otherwise, the
 	 * point is changed to a M.
+	 * 
+	 * @param grid a 2D string array
+	 * @return the integer 1 if a user's ship is hit and 0 if not. 
 	 */
 	public static int opponentAttack(String[][] grid) {
 		int x = (int) (Math.random() * 5);
