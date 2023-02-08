@@ -1,4 +1,3 @@
-# Sem-3-Assignments
-3rd Semester Assignments
+# Java Projects
 
-Jan. 22, 2023 Ethan Huang 3rd semester assignments
+Jan. 22, 2023 Projects that I have written in Java
