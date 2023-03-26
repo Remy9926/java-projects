@@ -12,7 +12,7 @@ import java.io.FileNotFoundException;
 
 public class GardenMain {
 	static int NUM_ROWS;
-  static int NUM_COLS;
+  	static int NUM_COLS;
 
 	public static void main(String[] args) throws FileNotFoundException{
 		try {
