@@ -126,8 +126,8 @@ public class GardenMain {
 						}
 					}
 		    		}
-	        }
-	}
+	        	}
+		}
 		
 		catch(java.io.FileNotFoundException e){
 			System.out.println("The specified file could not be found!");
