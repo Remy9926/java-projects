@@ -28,104 +28,104 @@ public class GardenMain {
 				Garden garden = new Garden(NUM_ROWS, NUM_COLS);
 				while (rfile.hasNextLine()) {
 					String line = rfile.nextLine();
-				String[] splitString = line.split(" ");
+					String[] splitString = line.split(" ");
 
-				if (!splitString[0].equals("")) {
+					if (!splitString[0].equals("")) {
 
-					if (splitString[0].toLowerCase().equals("plant")) {
-						int[] coords = getCoords(splitString[1]);
-						garden.plant(coords[0], coords[1], splitString[2].toLowerCase(), splitString[2].substring(0,1).toLowerCase());
-					}
-
-					else if (splitString[0].toLowerCase().equals("print")) {
-						System.out.println("> " + line.toUpperCase());
-						garden.print();
-					}
-
-					else if (splitString[0].toLowerCase().equals("grow")) {
-						int count = Integer.valueOf(splitString[1]);
-
-						if (splitString.length == 2) {
-							System.out.println("> " + line.toUpperCase() + "\n");
-							garden.grow(count);
+						if (splitString[0].toLowerCase().equals("plant")) {
+							int[] coords = getCoords(splitString[1]);
+							garden.plant(coords[0], coords[1], splitString[2].toLowerCase(), splitString[2].substring(0,1).toLowerCase());
 						}
 
-						else {
-							String[] coordOrPlant = splitString[2].split(",");
-							if (coordOrPlant.length == 2) {
+						else if (splitString[0].toLowerCase().equals("print")) {
+							System.out.println("> " + line.toUpperCase());
+							garden.print();
+						}
+
+						else if (splitString[0].toLowerCase().equals("grow")) {
+							int count = Integer.valueOf(splitString[1]);
+
+							if (splitString.length == 2) {
 								System.out.println("> " + line.toUpperCase() + "\n");
-								int[] coords = getCoords(splitString[2]);
-								garden.grow(count, coords[0], coords[1]);
+								garden.grow(count);
 							}
+
 							else {
-								System.out.println("> " + splitString[0].toUpperCase() + " " + splitString[1] + " " + splitString[2] + "\n");
-								garden.grow(count, coordOrPlant[0].toLowerCase());
+								String[] coordOrPlant = splitString[2].split(",");
+								if (coordOrPlant.length == 2) {
+									System.out.println("> " + line.toUpperCase() + "\n");
+									int[] coords = getCoords(splitString[2]);
+									garden.grow(count, coords[0], coords[1]);
+								}
+								else {
+									System.out.println("> " + splitString[0].toUpperCase() + " " + splitString[1] + " " + splitString[2] + "\n");
+									garden.grow(count, coordOrPlant[0].toLowerCase());
+								}
 							}
 						}
-					}
 
-					else if (splitString[0].toLowerCase().equals("harvest")) {
-						if (splitString.length == 1) {
-							System.out.println("> " + line.toUpperCase() + "\n");
-							garden.harvest();
-						}
-
-						else {
-							String[] coordOrType = splitString[1].split(",");	
-							if (coordOrType.length == 2) {
+						else if (splitString[0].toLowerCase().equals("harvest")) {
+							if (splitString.length == 1) {
 								System.out.println("> " + line.toUpperCase() + "\n");
-								int[] coords = getCoords(splitString[1]);
-								garden.harvest(coords[0], coords[1]);
+								garden.harvest();
 							}
+
 							else {
-								System.out.println("> " + splitString[0].toUpperCase() + " " + splitString[1] + "\n");
-								garden.harvest(splitString[1].toLowerCase());
+								String[] coordOrType = splitString[1].split(",");	
+								if (coordOrType.length == 2) {
+									System.out.println("> " + line.toUpperCase() + "\n");
+									int[] coords = getCoords(splitString[1]);
+									garden.harvest(coords[0], coords[1]);
+								}
+								else {
+									System.out.println("> " + splitString[0].toUpperCase() + " " + splitString[1] + "\n");
+									garden.harvest(splitString[1].toLowerCase());
+								}
 							}
 						}
-					}
 
-					else if (splitString[0].toLowerCase().equals("pick")) {
-						if (splitString.length == 1) {
-							System.out.println("> " + line.toUpperCase() + "\n");
-							garden.pick();
-						}
-
-						else {
-							String[] coordOrType = splitString[1].split(",");
-							if (coordOrType.length == 2) {
+						else if (splitString[0].toLowerCase().equals("pick")) {
+							if (splitString.length == 1) {
 								System.out.println("> " + line.toUpperCase() + "\n");
-								int[] coords = getCoords(splitString[1]);
-								garden.pick(coords[0], coords[1]);
+								garden.pick();
 							}
+
 							else {
-								System.out.println("> " + splitString[0].toUpperCase() + " " + splitString[1] + "\n");
-								garden.pick(splitString[1].toLowerCase());
+								String[] coordOrType = splitString[1].split(",");
+								if (coordOrType.length == 2) {
+									System.out.println("> " + line.toUpperCase() + "\n");
+									int[] coords = getCoords(splitString[1]);
+									garden.pick(coords[0], coords[1]);
+								}
+								else {
+									System.out.println("> " + splitString[0].toUpperCase() + " " + splitString[1] + "\n");
+									garden.pick(splitString[1].toLowerCase());
 
+								}
 							}
 						}
-					}
 
-					else if (splitString[0].toLowerCase().equals("cut")) {
-						if (splitString.length == 1) {
-							System.out.println("> " + line.toUpperCase() + "\n");
-							garden.cut();
-						}
-
-						else {
-							String[] coordOrType = splitString[1].split(",");
-							if (coordOrType.length == 2) {
+						else if (splitString[0].toLowerCase().equals("cut")) {
+							if (splitString.length == 1) {
 								System.out.println("> " + line.toUpperCase() + "\n");
-								int[] coords = getCoords(splitString[1]);
-								garden.cut(coords[0], coords[1]);
+								garden.cut();
 							}
+
 							else {
-								System.out.println("> " + splitString[0].toUpperCase() + " " + splitString[1] + "\n");
-								garden.cut(splitString[1].toLowerCase());
+								String[] coordOrType = splitString[1].split(",");
+								if (coordOrType.length == 2) {
+									System.out.println("> " + line.toUpperCase() + "\n");
+									int[] coords = getCoords(splitString[1]);
+									garden.cut(coords[0], coords[1]);
+								}
+								else {
+									System.out.println("> " + splitString[0].toUpperCase() + " " + splitString[1] + "\n");
+									garden.cut(splitString[1].toLowerCase());
+								}
 							}
 						}
 					}
-				}
-		    	}
+		    		}
 	        }
 	}
 		
