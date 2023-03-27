@@ -10,8 +10,8 @@ public class Garden {
 	
 	ArrayList<Plant[]> field = new ArrayList<Plant[]>();
 	ArrayList<String> trees = new ArrayList<String>();
-    ArrayList<String> flowers = new ArrayList<String>();
-    ArrayList<String> vegetables = new ArrayList<String>();
+    	ArrayList<String> flowers = new ArrayList<String>();
+    	ArrayList<String> vegetables = new ArrayList<String>();
 					
 	public Garden(int rows, int cols) {
 		for (int i = 0; i < rows; i++) {
